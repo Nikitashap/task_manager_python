@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мои задачи</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    input, textarea, select, button {
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      resize: vertical;
+    }
+    input[type="text"], input[type="datetime-local"], select {
+      width: 100%;
+    }
+    hr {
+      margin: 30px 0;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 15px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .editForm {
+      background: #f0f8ff;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 5px;
+    }
+    #logoutBtn {
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+    #newTaskForm button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .task-buttons button {
+      background: #2196F3;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    .task-buttons button:last-child {
+      background: #ff9800;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1>Мои задачи</h1>
+    <button id="logoutBtn" onclick="logout()">Выйти</button>
+  </div>
+
+  <h2>Создать задачу</h2>
+  <form id="newTaskForm">
+    <input type="text" name="title" placeholder="Название *" required>
+    <textarea name="description" placeholder="Описание"></textarea>
+    <input type="datetime-local" name="deadline">
+    <button type="submit">Добавить задачу</button>
+  </form>
+
+  <hr>
+  
+  <h2>Список задач</h2>
+  <ul id="taskList"></ul>
+
+  <script src="/static/js/tasks.js"></script>
+</body>
+</html>
